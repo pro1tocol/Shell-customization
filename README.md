@@ -22,7 +22,8 @@ plugins:
 [Autocomplete](https://github.com/zsh-users/zsh-autosuggestions)
 
     cd ~/.oh-my-zsh/themes
-    wget https://raw.githubusercontent.com/sebastianpulido/oh-my-zsh/main/smoothmonkey.zsh-theme
+    yay -S bc
+    wget https://raw.githubusercontent.com/ChesterYue/ohmyzsh-theme-passion/master/passion.zsh-theme
     cd ~/.oh-my-zsh/plugins
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
     git clone https://github.com/zsh-users/zsh-autosuggestions
