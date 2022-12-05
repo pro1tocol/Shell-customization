@@ -35,9 +35,15 @@ plugins:
     ZSH_THEME="passion"
     plugins=(
              git
+             sudo
+             command-not-found
+             cp
+             nmap
+             zsh-interactive-cd
              zsh-syntax-highlighting
              zsh-autosuggestions
              )
+    export EDITOR='vim'
     alias cat='ccat'
     
     source .zshrc
