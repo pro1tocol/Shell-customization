@@ -32,11 +32,12 @@ plugins:
     cd ~/
     vim .zshrc
     
-    ZSH_THEME="smoothmonkey"
+    ZSH_THEME="passion"
     plugins=(
              git
              zsh-syntax-highlighting
              zsh-autosuggestions
              )
-             
+    alias cat='ccat'
+    
     source .zshrc
