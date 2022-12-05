@@ -14,7 +14,9 @@ This section is suitable for beautifying the custom zsh environment
     sh install.sh
 `step 3` download themes and plugins
 themes: [wiki](https://github.com/ohmyzsh/ohmyzsh/wiki/External-themes)
-plugins: [Highlight](https://github.com/zsh-users/zsh-syntax-highlighting)  [Autocomplete](https://github.com/zsh-users/zsh-autosuggestions)
+plugins: 
+[Highlight](https://github.com/zsh-users/zsh-syntax-highlighting)  
+[Autocomplete](https://github.com/zsh-users/zsh-autosuggestions)
 
     cd ~/.oh-my-zsh/themes
     wget https://raw.githubusercontent.com/sebastianpulido/oh-my-zsh/main/smoothmonkey.zsh-theme
