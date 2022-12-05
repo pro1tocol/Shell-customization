@@ -29,6 +29,7 @@ plugins:
     git clone https://github.com/zsh-users/zsh-autosuggestions
 `step 3` deployment configuration
 
+    pacman -S fzf
     cd ~/
     vim .zshrc
     
