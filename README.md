@@ -8,11 +8,13 @@ This section is suitable for beautifying the custom zsh environment
     echo $SHELL
     cat /etc/shells
     chsh -s /bin/zsh
-`step 2` install ohmyzsh
+`step 2` install [ohmyzsh](https://github.com/ohmyzsh/ohmyzsh)
 
     wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
     sh install.sh
 `step 3` download themes and plugins
+themes: [wiki](https://github.com/ohmyzsh/ohmyzsh/wiki/External-themes)
+plugins: [Highlight](https://github.com/zsh-users/zsh-syntax-highlighting)  [Autocomplete](https://github.com/zsh-users/zsh-autosuggestions)
 
     cd ~/.oh-my-zsh/themes
     wget https://raw.githubusercontent.com/sebastianpulido/oh-my-zsh/main/smoothmonkey.zsh-theme
