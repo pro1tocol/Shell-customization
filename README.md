@@ -16,6 +16,13 @@ This section is suitable for beautifying the custom zsh environment
 
     curl https://raw.githubusercontent.com/ohmysh/ohmysh/main/install.sh > OMSInstaller.sh
     bash OMSInstaller.sh
+    source .bashrc
+`step 3` switch themes and plugins
+
+    oms -t list
+    oms -t <theme>
+    
+    
 
 --------------------------
 ## >> Zsh
