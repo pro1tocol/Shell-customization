@@ -23,9 +23,9 @@ This section is suitable for beautifying the custom zsh environment
     oms -t brainy
     
     oms -p list
-    oms -p <plugin> enable
-    oms -p <plugin> disable
-    oms -p <plugin> restart
+    oms -p enable <plugin>
+    oms -p disable <plugin>
+    oms -p restart <plugin>
 
 --------------------------
 ## >> Zsh
