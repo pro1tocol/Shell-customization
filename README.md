@@ -14,7 +14,8 @@ This section is suitable for beautifying the custom zsh environment
     chsh -s /bin/bash
 `step 2` install [ohmysh](https://github.com/ohmysh/ohmysh)
 
-    wget
+    curl https://raw.githubusercontent.com/ohmysh/ohmysh/main/install.sh > OMSInstaller.sh
+    bash OMSInstaller.sh
 
 --------------------------
 ## -Zsh
