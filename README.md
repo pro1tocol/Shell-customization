@@ -2,8 +2,8 @@
 
 This section is suitable for beautifying the custom zsh environment
 
-## -Bash
 --------------------------
+## -Bash
 
 `step 1` environment variable switch
 
@@ -16,9 +16,8 @@ This section is suitable for beautifying the custom zsh environment
 
     wget
 
-
-## -Zsh
 --------------------------
+## -Zsh
 
 `step 1` environment variable switch
 
