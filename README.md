@@ -7,8 +7,8 @@ This section is suitable for beautifying the custom zsh environment
 
 `step 1` environment variable switch
 
+    pacman -S bash bash-completion
     pacman -S curl git
-    pacman -S bash bash-completions
     echo $SHELL
     cat /etc/shells
     chsh -s /bin/bash
