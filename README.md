@@ -2,7 +2,7 @@
 
 This section is suitable for beautifying the custom zsh environment
 
-### Bash
+## Bash
 --------------------------
 
 `step 1` environment variable switch
@@ -12,8 +12,12 @@ This section is suitable for beautifying the custom zsh environment
     echo $SHELL
     cat /etc/shells
     chsh -s /bin/bash
+`step 2` install [ohmysh](https://github.com/ohmysh/ohmysh)
 
-### Zsh
+    wget
+
+
+## Zsh
 --------------------------
 
 `step 1` environment variable switch
