@@ -22,7 +22,10 @@ This section is suitable for beautifying the custom zsh environment
     oms -t list
     oms -t brainy
     
-    
+    oms -p list
+    oms -p <plugin> enable
+    oms -p <plugin> disable
+    oms -p <plugin> restart
 
 --------------------------
 ## >> Zsh
