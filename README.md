@@ -20,7 +20,7 @@ This section is suitable for beautifying the custom zsh environment
 `step 3` switch themes and plugins
 
     oms -t list
-    oms -t <theme>
+    oms -t brainy
     
     
 
