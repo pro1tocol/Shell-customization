@@ -3,7 +3,7 @@
 This section is suitable for beautifying the custom zsh environment
 
 --------------------------
-## -Bash
+## >> Bash
 
 `step 1` environment variable switch
 
@@ -18,7 +18,7 @@ This section is suitable for beautifying the custom zsh environment
     bash OMSInstaller.sh
 
 --------------------------
-## -Zsh
+## >> Zsh
 
 `step 1` environment variable switch
 
