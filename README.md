@@ -1,6 +1,20 @@
-# Zsh-customization-2.0.6
---------------------------
+# Shell-customization-2.2.9
+
 This section is suitable for beautifying the custom zsh environment
+
+### Bash
+--------------------------
+
+`step 1` environment variable switch
+
+    pacman -S curl git
+    pacman -S bash bash-completions
+    echo $SHELL
+    cat /etc/shells
+    chsh -s /bin/bash
+
+### Zsh
+--------------------------
 
 `step 1` environment variable switch
 
