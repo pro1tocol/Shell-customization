@@ -5,9 +5,9 @@ alias ls='ls --color=auto'
 alias ll='ls --color=auto -lAF'
 alias la='ls --color=auto -laAF'
 
-alias exit='history -c && exit'
-alias poweroff='history -c && poweroff'
-alias reboot='history -c && reboot'
+alias exit='history -c && history -w && exit'
+alias poweroff='history -c && history -w && poweroff'
+alias reboot='history -c && history -w && reboot'
 
 # PS1='\[\033[01;31m\]\u\[\033[01;33m\]@\[\033[01;36m\]\h \[\033[01;33m\]\w \[\033[01;35m\]\$ \[\033[00m\]'
 
