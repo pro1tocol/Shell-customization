@@ -83,17 +83,17 @@ plugins:
     ls <address or nothing>  #show file list
     pwd                      #show current directory address
     mkdir <folder>           #create folder
-    mv <file> <address>       #move or rename file
-    cp <file> <address>       #copy file
-    rm <file>                 #delete file
-    cat <file>                #show file content
-    wc -l <file>              #statistical file line count
-    head -5 <file>            #show everything before 5 lines
-    tail -5 <file>            #show everything after 5 lines
+    mv <file> <address>      #move or rename file
+    cp <file> <address>      #copy file
+    rm <file>                #delete file
+    cat <file>               #show file content
+    wc -l <file>             #statistical file line count
+    head -5 <file>           #show everything before 5 lines
+    tail -5 <file>           #show everything after 5 lines
     echo $SHELL              #output content
-    find <file>                #find file in current directory
-    which <file>              #find qualified files in the $PATH
-    whereis <file>            #find file in the entire directory
+    find <file>              #find file in current directory
+    which <file>             #find qualified files in the $PATH
+    whereis <file>           #find file in the entire directory
     df -h                    #show disk usage
     free -h                  #show swap usage
     fdisk -l                 #show zoning
