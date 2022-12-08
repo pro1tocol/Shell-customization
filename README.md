@@ -58,23 +58,9 @@ plugins:
 `step 3` deployment configuration
 
     pacman -S fzf
+    yay -S ccat
     cd ~/
     vim .zshrc
-    
-    ZSH_THEME="passion"
-    plugins=(
-             git
-             sudo
-             command-not-found
-             cp
-             nmap
-             zsh-interactive-cd
-             zsh-syntax-highlighting
-             zsh-autosuggestions
-             )
-    export EDITOR='vim'
-    alias cat='ccat'
-    
     source .zshrc
 --------------------------
 # Daily instructions
