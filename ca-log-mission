@@ -39,9 +39,8 @@ cat /dev/null > /var/log/dmesg 2>/dev/null
 cat /dev/null > /var/log/firewalld 2>/dev/null
 cat /dev/null > /var/log/mail.log 2>/dev/null
 cat /dev/null > /var/log/messages
-cat /dev/null > /var/log/spooler 2>/dev/null
-cat /dev/null > /var/log/syslog 2>/dev/null
-cat /dev/null > /var/log/tallylog 2>/dev/null
+cat /dev/null > /var/log/sys.log 2>/dev/null
+cat /dev/null > /var/log/tally.log 2>/dev/null
 cat /dev/null > /var/log/yum.log 2>/dev/null
 cat /dev/null > /var/log/kern.log 2>/dev/null
 cat /dev/null > /var/log/user.log 2>/dev/null
