@@ -45,5 +45,5 @@ cat /dev/null > /var/log/tallylog 2>/dev/null
 cat /dev/null > /var/log/yum.log 2>/dev/null
 cat /dev/null > /var/log/kern.log 2>/dev/null
 cat /dev/null > /var/log/user.log 2>/dev/null
-cat /dev/null > /var/spool/rsyslog
+rm -r /var/spool/rsyslog/*
 echo "It's done !!!"
