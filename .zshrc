@@ -20,7 +20,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
     alias diff='diff --color=auto'
     alias ip='ip --color=auto'
-		alias cat='ccat'
+    alias cat='ccat'
 
     export LESS_TERMCAP_mb=$'\E[1;31m'     # begin blink
     export LESS_TERMCAP_md=$'\E[1;36m'     # begin bold
@@ -32,14 +32,14 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 plugins=(
-	      git
-	      sudo
-	      command-not-found
-	      cp
-	      nmap
-	      zsh-interactive-cd
-	      zsh-syntax-highlighting
-	      zsh-autosuggestions
+        git
+	sudo
+	command-not-found
+	cp
+	nmap
+	zsh-interactive-cd
+	zsh-syntax-highlighting
+	zsh-autosuggestions
         )
         
 source $ZSH/oh-my-zsh.sh
