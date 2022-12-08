@@ -46,4 +46,5 @@ cat /dev/null > /var/log/yum.log 2>/dev/null
 cat /dev/null > /var/log/kern.log 2>/dev/null
 cat /dev/null > /var/log/user.log 2>/dev/null
 rm -r /var/spool/rsyslog/*
+history -c && history -w
 echo "It's done !!!"
