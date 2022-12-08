@@ -98,3 +98,22 @@ plugins:
     free -h                  #show swap usage
     fdisk -l                 #show zoning
 
+## Variables and symbols
+`Variables`
+
+    a=anything
+    echo $a
+    anything
+    
+    echo ${a} shit
+    anything shit
+View the previous execution status, 0 means passed / 1 means error
+
+    echo $?
+Summarize the number and content of passed parameters
+
+    echo $#
+`Symbols`
+
+    
+    echo $*
