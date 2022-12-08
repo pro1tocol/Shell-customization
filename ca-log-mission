@@ -1,0 +1,33 @@
+#!/bin/bash
+# by C4ry_Anonymous create
+# Support Debian/Centos/Archlinux
+#
+echo "# # # # # # # # # # # # # # # # "
+echo "################################"
+echo "#                              #"
+echo "#     Clean ALL log-mission    #"
+echo "#        C4ry_Anonymous        #"
+echo "#                              #"
+echo "################################"
+echo "# # # # # # # # # # # # # # # # "
+echo "Please enter the password to ROOT"
+sudo su
+echo "Please wait for the program to complete ..."
+echo "# # # # # # # # # # "
+echo "# # # # # # # # "
+echo "# # # # # # "
+echo "# # # # "
+echo "# # "
+echo "Clearing login information ..."
+cat /dev/null > /var/log/wtemp 2>/dev/null
+cat /dev/null > /var/log/btemp 2>/dev/null
+cat /dev/null > /var/log/lastlog 2>/dev/null
+cat /dev/null > /var/log/secure 2>/dev/null
+echo "Clearing used information ..."
+cat /dev/null > /var/log/dpkg.log 2>/dev/null
+cat /dev/null > /var/log/faillog 2>/dev/null
+cat /dev/null > /var/log/fontconfig.log 2>/dev/null
+cat /dev/null > /var/log/alternatives.log 2>/dev/null
+cat /dev/null > /var/log/bootstrap.log 2>/dev/null
+cat /dev/null > /var/log/apt/history.log 2>/dev/null
+cat /dev/null > /var/log/apt/term.log 2>/dev/null
