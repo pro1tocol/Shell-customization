@@ -112,8 +112,18 @@ View the previous execution status, 0 means passed / 1 means error
     echo $?
 Summarize the number and content of passed parameters
 
-    echo $#
+    echo $#    
+    echo $*
 `Symbols`
 
-    
-    echo $*
+    >                        #overwrite append
+    >>                       #non-overwriting append
+    |                        #pipe symbol
+    ||                       #execution error on the left, switch execution on the right
+    &&                       #execute sequentially from left to right
+    ;                        #execute alone
+    ""                       #output variable value
+    ''                       #output itself
+    ``                       #output command result
+    2>/dev/null              #error output to black hole
+    1>/dev/null              #correct output to black hole
