@@ -19,11 +19,13 @@ wtmp='/var/log/wtmp'
 btmp='/var/log/btmp'
 lastlog='/var/log/lastlog'
 secure='/var/log/secure'
+authlog='/var/log/auth.log'
+faillog='/var/log/faillog'
 
 sleep 3s
 
 if [ -e $wtmp ] ; then
-   cat /dev/null > $wtmp 2>/dev/null && echo 'The [wtmp] is clear'
+   cat $wtmp && cat /dev/null > $wtmp 2>/dev/null && echo 'The [wtmp] is clear'
  else
    echo '#The [wtmp] not exist'
 fi
@@ -31,7 +33,7 @@ fi
 sleep 1s
 
 if [ -e $btmp ] ; then
-   cat /dev/null > $btmp 2>/dev/null && echo 'The [btmp] is clear'
+   cat $btmp && cat /dev/null > $btmp 2>/dev/null && echo 'The [btmp] is clear'
  else
    echo '#The [btmp] not exist'
 fi
@@ -39,7 +41,7 @@ fi
 sleep 1s
 
 if [ -e $lastlog ] ; then
-   cat /dev/null > $lastlog 2>/dev/null && echo 'The [lastlog] is clear'
+   cat $lastlog && cat /dev/null > $lastlog 2>/dev/null && echo 'The [lastlog] is clear'
  else
    echo '#The [lastlog] not exist'
 fi
@@ -47,16 +49,31 @@ fi
 sleep 1s
 
 if [ -e $secure ] ; then
-   cat /dev/null > $secure 2>/dev/null && echo 'The [secure] is clear'
+   cat $secure && cat /dev/null > $secure 2>/dev/null && echo 'The [secure] is clear'
  else
    echo '#The [secure] not exist'
+fi
+
+sleep 1s
+
+if [ -e $authlog ] ; then
+   cat $authlog && cat /dev/null > $authlog 2>/dev/null && echo 'The [authlog] is clear'
+ else
+   echo '#The [authlog] not exist'
+fi
+
+sleep 1s
+
+if [ -e $faillog ] ; then
+   cat $faillog && cat /dev/null > $faillog 2>/dev/null && echo 'The [faillog] is clear'
+ else
+   echo '#The [faillog] not exist'
 fi
 
 sleep 1s
 echo "--------------------------------------------"
 echo "Clearing used information ..."
 dpkglog='/var/log/dpkg.log'
-faillog='/var/log/faillog'
 fontconfiglog='/var/log/fontconfig.log'
 alternativeslog='/var/log/alternatives.log'
 bootstraplog='/var/log/bootstrap.log'
@@ -71,14 +88,6 @@ if [ -e $dpkglog ] ; then
    cat /dev/null > $dpkglog 2>/dev/null && echo 'The [dpkglog] is clear'
  else
    echo '#The [dpkglog] not exist'
-fi
-
-sleep 1s
-
-if [ -e $faillog ] ; then
-   cat /dev/null > $faillog 2>/dev/null && echo 'The [faillog] is clear'
- else
-   echo '#The [faillog] not exist'
 fi
 
 sleep 1s
@@ -135,17 +144,29 @@ echo "--------------------------------------------"
 echo "Please wait for the program to complete ..."
 termlog='/var/log/apt/term.log'
 bootlog='/var/log/boot.log'
-authlog='/var/log/auth.log'
+bootlog2='/var/log/boot'
+debuglog='/var/log/debug'
+daemonlog='/var/log/daemon.log'
 croglog='/var/log/crog'
 dmesglog='/var/log/dmesg'
+lprlog='/var/log/lpr.log'
 firewalldlog='/var/log/firewalld'
-maillog='/var/log/mail.log'
+ufwlog='/var/log/ufw'
+gufwlog='/var/log/gufw'
+maillog="/var/log/mail.*"
+mysqllog="/var/log/mysql.*"
 messageslog='/var/log/messages'
-syslog='/var/log/sys.log'
+syslog='/var/log/syslog'
 tallylog='/var/log/tally.log'
 kernlog='/var/log/kern.log'
 userlog='/var/log/user.log'
-rsyslog='/var/spool/rsyslog/*'
+xorglog='/var/log/xorg.0.log'
+apachelog="/var/log/apache2/*"
+lighttpdlog="/var/log/lighttpd/*"
+fscklog="/var/log/fsck/*"
+apportlog='/var/log/apport.log'
+rsyslog="/var/spool/rsyslog/*"
+
 
 sleep 3s
 
@@ -165,10 +186,26 @@ fi
 
 sleep 1s
 
-if [ -e $authlog ] ; then
-   cat /dev/null > $authlog 2>/dev/null && echo 'The [authlog] is clear'
+if [ -e $bootlog2 ] ; then
+   grep -i fail /var/log/boot && cat /dev/null > $bootlog2 2>/dev/null && echo 'The [bootlog2] is clear'
  else
-   echo '#The [authlog] not exist'
+   echo '#The [bootlog2] not exist'
+fi
+
+sleep 1s
+
+if [ -e $debuglog ] ; then
+   cat /dev/null > $debuglog 2>/dev/null && echo 'The [debuglog] is clear'
+ else
+   echo '#The [debuglog] not exist'
+fi
+
+sleep 1s
+
+if [ -e $daemonlog ] ; then
+   cat /dev/null > $daemonlog 2>/dev/null && echo 'The [daemonlog] is clear'
+ else
+   echo '#The [daemonlog] not exist'
 fi
 
 sleep 1s
@@ -189,10 +226,34 @@ fi
 
 sleep 1s
 
+if [ -e $lprlog ] ; then
+   cat /dev/null > $lprlog 2>/dev/null && echo 'The [lprlog] is clear'
+ else
+   echo '#The [lprlog] not exist'
+fi
+
+sleep 1s
+
 if [ -e $firewalldlog ] ; then
    cat /dev/null > $firewalldlog 2>/dev/null && echo 'The [firewalldlog] is clear'
  else
    echo '#The [firewalldlog] not exist'
+fi
+
+sleep 1s
+
+if [ -e $ufwlog ] ; then
+   cat /dev/null > $ufwlog 2>/dev/null && echo 'The [ufwlog] is clear'
+ else
+   echo '#The [ufwlog] not exist'
+fi
+
+sleep 1s
+
+if [ -e $gufwlog ] ; then
+   cat /dev/null > $gufwlog 2>/dev/null && echo 'The [gufwlog] is clear'
+ else
+   echo '#The [gufwlog] not exist'
 fi
 
 sleep 1s
@@ -205,8 +266,16 @@ fi
 
 sleep 1s
 
+if [ -e $mysqllog ] ; then
+   cat /var/log/mysql.err && cat /dev/null > $mysqllog 2>/dev/null && echo 'The [mysqllog] is clear'
+ else
+   echo '#The [mysqllog] not exist'
+fi
+
+sleep 1s
+
 if [ -e $messageslog ] ; then
-   cat /dev/null > $messageslog 2>/dev/null && echo 'The [messageslog] is clear'
+   less $messageslog && cat /dev/null > $messageslog 2>/dev/null && echo 'The [messageslog] is clear'
  else
    echo '#The [messageslog] not exist'
 fi
@@ -241,6 +310,46 @@ if [ -e $userlog ] ; then
    cat /dev/null > $userlog 2>/dev/null && echo 'The [userlog] is clear'
  else
    echo '#The [userlog] not exist'
+fi
+
+sleep 1s
+
+if [ -e $xorglog ] ; then
+   more /var/log/xorg.0.log && cat /dev/null > $xorglog 2>/dev/null && echo 'The [xorglog] is clear'
+ else
+   echo '#The [xorglog] not exist'
+fi
+
+sleep 1s
+
+if [ -e $apachelog ] ; then
+   cat /dev/null > $apachelog 2>/dev/null && echo 'The [apachelog] is clear'
+ else
+   echo '#The [apachelog] not exist'
+fi
+
+sleep 1s
+
+if [ -e $lighttpdlog ] ; then
+   cat /dev/null > $lighttpdlog 2>/dev/null && echo 'The [lighttpdlog] is clear'
+ else
+   echo '#The [lighttpdlog] not exist'
+fi
+
+sleep 1s
+
+if [ -e $fscklog ] ; then
+   cat /dev/null > $fscklog 2>/dev/null && echo 'The [fscklog] is clear'
+ else
+   echo '#The [fscklog] not exist'
+fi
+
+sleep 1s
+
+if [ -e $apportlog ] ; then
+   tail -f $apportlog && cat /dev/null > $apportlog 2>/dev/null && echo 'The [apportlog] is clear'
+ else
+   echo '#The [apportlog] not exist'
 fi
 
 sleep 1s
