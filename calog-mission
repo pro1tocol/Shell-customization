@@ -78,6 +78,7 @@ fontconfiglog='/var/log/fontconfig.log'
 alternativeslog='/var/log/alternatives.log'
 bootstraplog='/var/log/bootstrap.log'
 aptlog='/var/log/apt/history.log'
+termlog='/var/log/apt/term.log'
 pacmanlog='/var/log/pacman.log'
 yumlog='/var/log/yum.log'
 
@@ -124,6 +125,14 @@ fi
 
 sleep 1s
 
+if [ -e $termlog ] ; then
+   cat /dev/null > $termlog 2>/dev/null && echo 'The [termlog] is clear'
+ else
+   echo '#The [termlog] not exist'
+fi
+
+sleep 1s
+
 if [ -e $pacmanlog ] ; then
    cat /dev/null > $pacmanlog 2>/dev/null && echo 'The [pacmanlog] is clear'
  else
@@ -142,7 +151,10 @@ sleep 1s
 
 echo "--------------------------------------------"
 echo "Please wait for the program to complete ..."
-termlog='/var/log/apt/term.log'
+fail2banlog='/var/log/fail2ban.log'
+firstbootlog='/var/log/first-boot.log'
+cloudinitlog='/var/log/cloud-init.log'
+cloudinitoutputlog='/var/log/cloud-init-output.log'
 bootlog='/var/log/boot.log'
 bootlog2='/var/log/boot'
 debuglog='/var/log/debug'
@@ -157,6 +169,7 @@ maillog="/var/log/mail.*"
 mysqllog="/var/log/mysql.*"
 messageslog='/var/log/messages'
 syslog='/var/log/syslog'
+syslog2='/var/log/syslog.1'
 tallylog='/var/log/tally.log'
 kernlog='/var/log/kern.log'
 userlog='/var/log/user.log'
@@ -165,15 +178,42 @@ apachelog="/var/log/apache2/*"
 lighttpdlog="/var/log/lighttpd/*"
 fscklog="/var/log/fsck/*"
 apportlog='/var/log/apport.log'
+ngxaccesslog='/var/log/nginx/access.log'
+ngxaccesslog2='/var/log/nginx/access.log.1'
+ngxerrorlog='/var/log/nginx/error.log'
+ngxerrorlog2='/var/log/nginx/error.log.1'
 rsyslog="/var/spool/rsyslog/*"
-
 
 sleep 3s
 
-if [ -e $termlog ] ; then
-   cat /dev/null > $termlog 2>/dev/null && echo 'The [termlog] is clear'
+if [ -e $fail2banlog ] ; then
+   cat /dev/null > $fail2banlog 2>/dev/null && echo 'The [fail2banlog] is clear'
  else
-   echo '#The [termlog] not exist'
+   echo '#The [fail2banlog] not exist'
+fi
+
+sleep 1s
+
+if [ -e $firstbootlog ] ; then
+   cat /dev/null > $firstbootlog 2>/dev/null && echo 'The [firstbootlog] is clear'
+ else
+   echo '#The [firstbootlog] not exist'
+fi
+
+sleep 1s
+
+if [ -e $cloudinitlog ] ; then
+   cat /dev/null > $cloudinitlog 2>/dev/null && echo 'The [cloudinitlog] is clear'
+ else
+   echo '#The [cloudinitlog] not exist'
+fi
+
+sleep 1s
+
+if [ -e $cloudinitoutputlog ] ; then
+   cat /dev/null > $cloudinitoutputlog 2>/dev/null && echo 'The [cloudinitoutputlog] is clear'
+ else
+   echo '#The [cloudinitoutputlog] not exist'
 fi
 
 sleep 1s
@@ -290,6 +330,15 @@ fi
 
 sleep 1s
 
+if [ -e $syslog2 ] ; then
+   cat /dev/null > $syslog2 2>/dev/null && echo 'The [syslog2] is clear'
+ else
+   echo '#The [syslog2] not exist'
+fi
+
+
+sleep 1s
+
 if [ -e $tallylog ] ; then
    cat /dev/null > $tallylog 2>/dev/null && echo 'The [tallylog] is clear'
  else
@@ -350,6 +399,37 @@ if [ -e $apportlog ] ; then
    tail -f $apportlog && cat /dev/null > $apportlog 2>/dev/null && echo 'The [apportlog] is clear'
  else
    echo '#The [apportlog] not exist'
+fi
+
+sleep 1s
+
+if [ -e $ngxaccesslog ] ; then
+   cat /dev/null > $ngxaccesslog 2>/dev/null && echo 'The [ngxaccesslog] is clear'
+ else
+   echo '#The [ngxaccesslog] not exist'
+fi
+sleep 1s
+
+if [ -e $ngxaccesslog2 ] ; then
+   cat /dev/null > $ngxaccesslog2 2>/dev/null && echo 'The [ngxaccesslog2] is clear'
+ else
+   echo '#The [ngxaccesslog2] not exist'
+fi
+
+sleep 1s
+
+if [ -e $ngxerrorlog ] ; then
+   cat /dev/null > $ngxerrorlog 2>/dev/null && echo 'The [ngxerrorlog] is clear'
+ else
+   echo '#The [ngxerrorlog] not exist'
+fi
+
+sleep 1s
+
+if [ -e $ngxerrorlog2 ] ; then
+   cat /dev/null > $ngxerrorlog2 2>/dev/null && echo 'The [ngxerrorlog2] is clear'
+ else
+   echo '#The [ngxerrorlog2] not exist'
 fi
 
 sleep 1s
