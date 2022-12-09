@@ -20,6 +20,7 @@ echo "# # # #"
 echo "# #"
 #---------------------------------------#
 echo "Clearing login information ..."
+sleep 1s
 wtmp='/var/log/wtmp'
 btmp='/var/log/btmp'
 lastlog='/var/log/lastlog'
@@ -31,11 +32,15 @@ if [ -e $wtmp ] ; then
    echo '#The [wtmp] not exist'
 fi
 
+sleep 1s
+
 if [ -e $btmp ] ; then
    cat /dev/null > $btmp 2>/dev/null && echo 'The [btmp] is clear'
  else
    echo '#The [btmp] not exist'
 fi
+
+sleep 1s
 
 if [ -e $lastlog ] ; then
    cat /dev/null > $lastlog 2>/dev/null && echo 'The [lastlog] is clear'
@@ -43,11 +48,16 @@ if [ -e $lastlog ] ; then
    echo '#The [lastlog] not exist'
 fi
 
+sleep 1s
+
 if [ -e $secure ] ; then
    cat /dev/null > $secure 2>/dev/null && echo 'The [secure] is clear'
  else
    echo '#The [secure] not exist'
 fi
+
+sleep 1s
+
 #---------------------------------------#
 echo "Clearing used information ..."
 dpkglog='/var/log/dpkg.log'
@@ -59,11 +69,16 @@ aptlog='/var/log/apt/history.log'
 pacmanlog='/var/log/pacman.log'
 yumlog='/var/log/yum.log'
 
+
+sleep 1s
+
 if [ -e $dpkglog ] ; then
    cat /dev/null > $dpkglog 2>/dev/null && echo 'The [dpkglog] is clear'
  else
    echo '#The [dpkglog] not exist'
 fi
+
+sleep 1s
 
 if [ -e $faillog ] ; then
    cat /dev/null > $faillog 2>/dev/null && echo 'The [faillog] is clear'
@@ -71,11 +86,15 @@ if [ -e $faillog ] ; then
    echo '#The [faillog] not exist'
 fi
 
+sleep 1s
+
 if [ -e $fontconfiglog ] ; then
    cat /dev/null > $fontconfiglog 2>/dev/null && echo 'The [fontconfiglog] is clear'
  else
    echo '#The [fontconfiglog] not exist'
 fi
+
+sleep 1s
 
 if [ -e $alternativeslog ] ; then
    cat /dev/null > $alternativeslog 2>/dev/null && echo 'The [alternativeslog] is clear'
@@ -83,11 +102,15 @@ if [ -e $alternativeslog ] ; then
    echo '#The [alternativeslog] not exist'
 fi
 
+sleep 1s
+
 if [ -e $bootstraplog ] ; then
    cat /dev/null > $bootstraplog 2>/dev/null && echo 'The [bootstraplog] is clear'
  else
    echo '#The [bootstraplog] not exist'
 fi
+
+sleep 1s
 
 if [ -e $aptlog ] ; then
    cat /dev/null > $aptlog 2>/dev/null && echo 'The [aptlog] is clear'
@@ -95,17 +118,24 @@ if [ -e $aptlog ] ; then
    echo '#The [aptlog] not exist'
 fi
 
+sleep 1s
+
 if [ -e $pacmanlog ] ; then
    cat /dev/null > $pacmanlog 2>/dev/null && echo 'The [pacmanlog] is clear'
  else
    echo '#The [pacmanlog] not exist'
 fi
 
+sleep 1s
+
 if [ -e $yumlog ] ; then
    cat /dev/null > $yumlog 2>/dev/null && echo 'The [yumlog] is clear'
  else
    echo '#The [yumlog] not exist'
 fi
+
+sleep 1s
+
 #---------------------------------------#
 echo "Please wait for the program to complete ..."
 termlog='/var/log/apt/term.log'
@@ -122,11 +152,15 @@ kernlog='/var/log/kern.log'
 userlog='/var/log/user.log'
 rsyslog='/var/spool/rsyslog/*'
 
+sleep 1s
+
 if [ -e $termlog ] ; then
    cat /dev/null > $termlog 2>/dev/null && echo 'The [termlog] is clear'
  else
    echo '#The [termlog] not exist'
 fi
+
+sleep 1s
 
 if [ -e $bootlog ] ; then
    cat /dev/null > $bootlog 2>/dev/null && echo 'The [bootlog] is clear'
@@ -134,11 +168,15 @@ if [ -e $bootlog ] ; then
    echo '#The [bootlog] not exist'
 fi
 
+sleep 1s
+
 if [ -e $authlog ] ; then
    cat /dev/null > $authlog 2>/dev/null && echo 'The [authlog] is clear'
  else
    echo '#The [authlog] not exist'
 fi
+
+sleep 1s
 
 if [ -e $croglog ] ; then
    cat /dev/null > $croglog 2>/dev/null && echo 'The [croglog] is clear'
@@ -146,11 +184,15 @@ if [ -e $croglog ] ; then
    echo '#The [croglog] not exist'
 fi
 
+sleep 1s
+
 if [ -e $dmesglog ] ; then
    cat /dev/null > $dmesglog 2>/dev/null && echo 'The [dmesglog] is clear'
  else
    echo '#The [dmesglog] not exist'
 fi
+
+sleep 1s
 
 if [ -e $firewalldlog ] ; then
    cat /dev/null > $firewalldlog 2>/dev/null && echo 'The [firewalldlog] is clear'
@@ -158,11 +200,15 @@ if [ -e $firewalldlog ] ; then
    echo '#The [firewalldlog] not exist'
 fi
 
+sleep 1s
+
 if [ -e $maillog ] ; then
    cat /dev/null > $maillog 2>/dev/null && echo 'The [maillog] is clear'
  else
    echo '#The [maillog] not exist'
 fi
+
+sleep 1s
 
 if [ -e $messageslog ] ; then
    cat /dev/null > $messageslog 2>/dev/null && echo 'The [messageslog] is clear'
@@ -170,11 +216,15 @@ if [ -e $messageslog ] ; then
    echo '#The [messageslog] not exist'
 fi
 
+sleep 1s
+
 if [ -e $syslog ] ; then
    cat /dev/null > $syslog 2>/dev/null && echo 'The [syslog] is clear'
  else
    echo '#The [syslog] not exist'
 fi
+
+sleep 1s
 
 if [ -e $tallylog ] ; then
    cat /dev/null > $tallylog 2>/dev/null && echo 'The [tallylog] is clear'
@@ -182,11 +232,15 @@ if [ -e $tallylog ] ; then
    echo '#The [tallylog] not exist'
 fi
 
+sleep 1s
+
 if [ -e $kernlog ] ; then
    cat /dev/null > $kernlog 2>/dev/null && echo 'The [kernlog] is clear'
  else
    echo '#The [kernlog] not exist'
 fi
+
+sleep 1s
 
 if [ -e $userlog ] ; then
    cat /dev/null > $userlog 2>/dev/null && echo 'The [userlog] is clear'
@@ -194,20 +248,32 @@ if [ -e $userlog ] ; then
    echo '#The [userlog] not exist'
 fi
 
+sleep 1s
+
 if [ -e $rsyslog ] ; then
    rm -r /var/spool/rsyslog/* 2>/dev/null && echo 'The [rsyslog] is clear'
  else
    echo '#The [rsyslog] not exist'
 fi
+
+sleep 1s
+
 #---------------------------------------#
 echo "Please wait for clear SHELL to complete ..."
+
+sleep 1s
+
 if [ -e /root/.bash_history ] ; then
    cat /dev/null > /root/.bash_history 2>/dev/null && echo 'The [bash-history] is clear'
 fi
 
+sleep 1s
+
 if [ -e /root/.zsh_history ] ; then
    cat /dev/null > /root/.zsh_history 2>/dev/null && echo 'The [zsh-history] is clear'
 fi
+
+sleep 1s
 
 echo "It's done !! HOPE YOUR ENJOY !!"
 
