@@ -12,17 +12,7 @@ echo "#                              #"
 echo "################################"
 echo "# # # # # # # # # # # # # # # #"
 echo "!!!Please enter ROOT to work!!!"
-sleep 1s
-echo "# # # # # # # # # #"
-sleep 1s
-echo "# # # # # # # #"
-sleep 1s
-echo "# # # # # #"
-sleep 1s
-echo "# # # #"
-sleep 1s
-echo "# #"
-sleep 1s
+echo "tart after 10 seconds" && sleep 10s
 #---------------------------------------#
 echo "Clearing login information ..."
 wtmp='/var/log/wtmp'
