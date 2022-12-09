@@ -315,7 +315,7 @@ fi
 sleep 1s
 
 if [ -e $messageslog ] ; then
-   less $messageslog && cat /dev/null > $messageslog 2>/dev/null && echo 'The [messageslog] is clear'
+   cat $messageslog && cat /dev/null > $messageslog 2>/dev/null && echo 'The [messageslog] is clear'
  else
    echo '#The [messageslog] not exist'
 fi
