@@ -17,9 +17,11 @@ echo "--------------------------------------------"
 echo "Clearing login information ..."
 wtmp='/var/log/wtmp'
 btmp='/var/log/btmp'
+btmp2='/var/log/btmp.1'
 lastlog='/var/log/lastlog'
 secure='/var/log/secure'
 authlog='/var/log/auth.log'
+authlog2='/var/log/auth.log.1'
 faillog='/var/log/faillog'
 
 sleep 3s
@@ -36,6 +38,14 @@ if [ -e $btmp ] ; then
    cat $btmp && cat /dev/null > $btmp 2>/dev/null && echo 'The [btmp] is clear'
  else
    echo '#The [btmp] not exist'
+fi
+
+sleep 1s
+
+if [ -e $btmp2 ] ; then
+   cat $btmp2 && cat /dev/null > $btmp2 2>/dev/null && echo 'The [btmp2] is clear'
+ else
+   echo '#The [btmp2] not exist'
 fi
 
 sleep 1s
@@ -64,6 +74,14 @@ fi
 
 sleep 1s
 
+if [ -e $authlog2 ] ; then
+   cat $authlog2 && cat /dev/null > $authlog2 2>/dev/null && echo 'The [authlog2] is clear'
+ else
+   echo '#The [authlog2] not exist'
+fi
+
+sleep 1s
+
 if [ -e $faillog ] ; then
    cat $faillog && cat /dev/null > $faillog 2>/dev/null && echo 'The [faillog] is clear'
  else
@@ -74,8 +92,10 @@ sleep 1s
 echo "--------------------------------------------"
 echo "Clearing used information ..."
 dpkglog='/var/log/dpkg.log'
+dpkglog2='/var/log/dpkg.log.1'
 fontconfiglog='/var/log/fontconfig.log'
 alternativeslog='/var/log/alternatives.log'
+alternativeslog2='/var/log/alternatives.log.1'
 bootstraplog='/var/log/bootstrap.log'
 aptlog='/var/log/apt/history.log'
 termlog='/var/log/apt/term.log'
@@ -93,6 +113,14 @@ fi
 
 sleep 1s
 
+if [ -e $dpkglog2 ] ; then
+   cat /dev/null > $dpkglog2 2>/dev/null && echo 'The [dpkglog2] is clear'
+ else
+   echo '#The [dpkglog2] not exist'
+fi
+
+sleep 1s
+
 if [ -e $fontconfiglog ] ; then
    cat /dev/null > $fontconfiglog 2>/dev/null && echo 'The [fontconfiglog] is clear'
  else
@@ -105,6 +133,14 @@ if [ -e $alternativeslog ] ; then
    cat /dev/null > $alternativeslog 2>/dev/null && echo 'The [alternativeslog] is clear'
  else
    echo '#The [alternativeslog] not exist'
+fi
+
+sleep 1s
+
+if [ -e $alternativeslog2 ] ; then
+   cat /dev/null > $alternativeslog2 2>/dev/null && echo 'The [alternativeslog2] is clear'
+ else
+   echo '#The [alternativeslog2] not exist'
 fi
 
 sleep 1s
@@ -152,27 +188,34 @@ sleep 1s
 echo "--------------------------------------------"
 echo "Please wait for the program to complete ..."
 fail2banlog='/var/log/fail2ban.log'
+fail2banlog2='/var/log/fail2ban.log.1'
 firstbootlog='/var/log/first-boot.log'
 cloudinitlog='/var/log/cloud-init.log'
 cloudinitoutputlog='/var/log/cloud-init-output.log'
 bootlog='/var/log/boot.log'
 bootlog2='/var/log/boot'
 debuglog='/var/log/debug'
+debuglog2='/var/log/debug.1'
 daemonlog='/var/log/daemon.log'
+daemonlog2='/var/log/daemon.log.1'
 croglog='/var/log/crog'
 dmesglog='/var/log/dmesg'
 lprlog='/var/log/lpr.log'
 firewalldlog='/var/log/firewalld'
 ufwlog='/var/log/ufw'
+ufwlog2='/var/log/ufw.1'
 gufwlog='/var/log/gufw'
 maillog="/var/log/mail.*"
 mysqllog="/var/log/mysql.*"
 messageslog='/var/log/messages'
+messageslog2='/var/log/messages.1'
 syslog='/var/log/syslog'
 syslog2='/var/log/syslog.1'
 tallylog='/var/log/tally.log'
 kernlog='/var/log/kern.log'
+kernlog2='/var/log/kern.log.1'
 userlog='/var/log/user.log'
+userlog2='/var/log/user.log.1'
 xorglog='/var/log/xorg.0.log'
 apachelog="/var/log/apache2/*"
 lighttpdlog="/var/log/lighttpd/*"
@@ -190,6 +233,14 @@ if [ -e $fail2banlog ] ; then
    cat /dev/null > $fail2banlog 2>/dev/null && echo 'The [fail2banlog] is clear'
  else
    echo '#The [fail2banlog] not exist'
+fi
+
+sleep 1s
+
+if [ -e $fail2banlog2 ] ; then
+   cat /dev/null > $fail2banlog2 2>/dev/null && echo 'The [fail2banlog2] is clear'
+ else
+   echo '#The [fail2banlog2] not exist'
 fi
 
 sleep 1s
@@ -242,10 +293,26 @@ fi
 
 sleep 1s
 
+if [ -e $debuglog2 ] ; then
+   cat /dev/null > $debuglog2 2>/dev/null && echo 'The [debuglog2] is clear'
+ else
+   echo '#The [debuglog2] not exist'
+fi
+
+sleep 1s
+
 if [ -e $daemonlog ] ; then
    cat /dev/null > $daemonlog 2>/dev/null && echo 'The [daemonlog] is clear'
  else
    echo '#The [daemonlog] not exist'
+fi
+
+sleep 1s
+
+if [ -e $daemonlog2 ] ; then
+   cat /dev/null > $daemonlog2 2>/dev/null && echo 'The [daemonlog2] is clear'
+ else
+   echo '#The [daemonlog2] not exist'
 fi
 
 sleep 1s
@@ -290,6 +357,14 @@ fi
 
 sleep 1s
 
+if [ -e $ufwlog2 ] ; then
+   cat /dev/null > $ufwlog2 2>/dev/null && echo 'The [ufwlog2] is clear'
+ else
+   echo '#The [ufwlog2] not exist'
+fi
+
+sleep 1s
+
 if [ -e $gufwlog ] ; then
    cat /dev/null > $gufwlog 2>/dev/null && echo 'The [gufwlog] is clear'
  else
@@ -318,6 +393,14 @@ if [ -e $messageslog ] ; then
    cat $messageslog && cat /dev/null > $messageslog 2>/dev/null && echo 'The [messageslog] is clear'
  else
    echo '#The [messageslog] not exist'
+fi
+
+sleep 1s
+
+if [ -e $messageslog2 ] ; then
+   cat $messageslog2 && cat /dev/null > $messageslog2 2>/dev/null && echo 'The [messageslog2] is clear'
+ else
+   echo '#The [messageslog2] not exist'
 fi
 
 sleep 1s
@@ -355,10 +438,26 @@ fi
 
 sleep 1s
 
+if [ -e $kernlog2 ] ; then
+   cat /dev/null > $kernlog2 2>/dev/null && echo 'The [kernlog2] is clear'
+ else
+   echo '#The [kernlog2] not exist'
+fi
+
+sleep 1s
+
 if [ -e $userlog ] ; then
    cat /dev/null > $userlog 2>/dev/null && echo 'The [userlog] is clear'
  else
    echo '#The [userlog] not exist'
+fi
+
+sleep 1s
+
+if [ -e $userlog2 ] ; then
+   cat /dev/null > $userlog2 2>/dev/null && echo 'The [userlog2] is clear'
+ else
+   echo '#The [userlog2] not exist'
 fi
 
 sleep 1s
@@ -442,6 +541,543 @@ fi
 
 sleep 1s
 
+echo "--------------------------------------------"
+echo "Delete some file ..."
+
+sleep 3s
+
+ngxaccesslog3='/var/log/nginx/access.log.2.gz'
+ngxaccesslog4='/var/log/nginx/access.log.3.gz'
+ngxaccesslog5='/var/log/nginx/access.log.4.gz'
+ngxaccesslog6='/var/log/nginx/access.log.5.gz'
+ngxaccesslog7='/var/log/nginx/access.log.6.gz'
+ngxaccesslog8='/var/log/nginx/access.log.7.gz'
+ngxaccesslog9='/var/log/nginx/access.log.8.gz'
+ngxaccesslog10='/var/log/nginx/access.log.9.gz'
+ngxaccesslog11='/var/log/nginx/access.log.10.gz'
+ngxaccesslog12='/var/log/nginx/access.log.11.gz'
+ngxaccesslog13='/var/log/nginx/access.log.12.gz'
+ngxaccesslog14='/var/log/nginx/access.log.13.gz'
+ngxaccesslog15='/var/log/nginx/access.log.14.gz'
+ngxaccesslog16='/var/log/nginx/access.log.15.gz'
+ngxaccesslog17='/var/log/nginx/access.log.16.gz'
+ngxaccesslog18='/var/log/nginx/access.log.17.gz'
+ngxaccesslog19='/var/log/nginx/access.log.18.gz'
+ngxaccesslog20='/var/log/nginx/access.log.19.gz'
+ngxaccesslog21='/var/log/nginx/access.log.20.gz'
+ngxerrorlog3='/var/log/nginx/error.log.2.gz'
+ngxerrorlog4='/var/log/nginx/error.log.3.gz'
+ngxerrorlog5='/var/log/nginx/error.log.4.gz'
+ngxerrorlog6='/var/log/nginx/error.log.5.gz'
+ngxerrorlog7='/var/log/nginx/error.log.6.gz'
+ngxerrorlog8='/var/log/nginx/error.log.7.gz'
+ngxerrorlog9='/var/log/nginx/error.log.8.gz'
+ngxerrorlog10='/var/log/nginx/error.log.9.gz'
+ngxerrorlog11='/var/log/nginx/error.log.10.gz'
+ngxerrorlog12='/var/log/nginx/error.log.11.gz'
+ngxerrorlog13='/var/log/nginx/error.log.12.gz'
+ngxerrorlog14='/var/log/nginx/error.log.13.gz'
+ngxerrorlog15='/var/log/nginx/error.log.14.gz'
+ngxerrorlog16='/var/log/nginx/error.log.15.gz'
+ngxerrorlog17='/var/log/nginx/error.log.16.gz'
+ngxerrorlog18='/var/log/nginx/error.log.17.gz'
+ngxerrorlog19='/var/log/nginx/error.log.18.gz'
+ngxerrorlog20='/var/log/nginx/error.log.19.gz'
+ngxerrorlog21='/var/log/nginx/error.log.20.gz'
+authlog3='/var/log/auth.log.2.gz'
+authlog4='/var/log/auth.log.3.gz'
+authlog5='/var/log/auth.log.4.gz'
+authlog6='/var/log/auth.log.5.gz'
+authlog7='/var/log/auth.log.6.gz'
+daemonlog3='/var/log/daemon.log.2.gz'
+daemonlog4='/var/log/daemon.log.3.gz'
+daemonlog5='/var/log/daemon.log.4.gz'
+daemonlog6='/var/log/daemon.log.5.gz'
+daemonlog7='/var/log/daemon.log.6.gz'
+debuglog3='/var/log/debug.2.gz'
+debuglog4='/var/log/debug.3.gz'
+debuglog5='/var/log/debug.4.gz'
+userlog3='/var/log/user.log.2.gz'
+userlog4='/var/log/user.log.3.gz'
+userlog5='/var/log/user.log.4.gz'
+ufwlog3='/var/log/ufw.log.2.gz'
+ufwlog4='/var/log/ufw.log.3.gz'
+ufwlog5='/var/log/ufw.log.4.gz'
+messageslog3='/var/log/messages.2.gz'
+messageslog4='/var/log/messages.3.gz'
+messageslog5='/var/log/messages.4.gz'
+kernlog3='/var/log/kern.log.2.gz'
+kernlog4='/var/log/kern.log.3.gz'
+kernlog5='/var/log/kern.log.4.gz'
+fail2banlog3='/var/log/fail2ban.log.2.gz'
+fail2banlog4='/var/log/fail2ban.log.3.gz'
+fail2banlog5='/var/log/fail2ban.log.4.gz'
+syslog3='/var/log/syslog.2.gz'
+syslog4='/var/log/syslog.3.gz'
+syslog5='/var/log/syslog.4.gz'
+syslog6='/var/log/syslog.5.gz'
+syslog7='/var/log/syslog.6.gz'
+syslog8='/var/log/syslog.7.gz'
+syslog9='/var/log/syslog.8.gz'
+syslog10='/var/log/syslog.9.gz'
+syslog11='/var/log/syslog.10.gz'
+syslog12='/var/log/syslog.11.gz'
+#--------------------------------------------#
+if [ -e $ngxaccesslog3 ] ; then
+   rm -r $ngxaccesslog3 2>/dev/null
+ else
+   echo '#The [access.log.2.gz] not exist'
+fi
+
+if [ -e $ngxaccesslog4 ] ; then
+   rm -r $ngxaccesslog4 2>/dev/null
+ else
+   echo '#The [access.log.3.gz] not exist'
+fi
+
+if [ -e $ngxaccesslog5 ] ; then
+   rm -r $ngxaccesslog5 2>/dev/null
+ else
+   echo '#The [access.log.4.gz] not exist'
+fi
+
+if [ -e $ngxaccesslog6 ] ; then
+   rm -r $ngxaccesslog6 2>/dev/null
+ else
+   echo '#The [access.log.5.gz] not exist'
+fi
+
+if [ -e $ngxaccesslog7 ] ; then
+   rm -r $ngxaccesslog7 2>/dev/null
+ else
+   echo '#The [access.log.6.gz] not exist'
+fi
+
+if [ -e $ngxaccesslog8 ] ; then
+   rm -r $ngxaccesslog8 2>/dev/null
+ else
+   echo '#The [access.log.7.gz] not exist'
+fi
+
+if [ -e $ngxaccesslog9 ] ; then
+   rm -r $ngxaccesslog9 2>/dev/null
+ else
+   echo '#The [access.log.8.gz] not exist'
+fi
+
+if [ -e $ngxaccesslog10 ] ; then
+   rm -r $ngxaccesslog10 2>/dev/null
+ else
+   echo '#The [access.log.9.gz] not exist'
+fi
+
+if [ -e $ngxaccesslog11 ] ; then
+   rm -r $ngxaccesslog11 2>/dev/null
+ else
+   echo '#The [access.log.10.gz] not exist'
+fi
+
+if [ -e $ngxaccesslog12 ] ; then
+   rm -r $ngxaccesslog12 2>/dev/null
+ else
+   echo '#The [access.log.11.gz] not exist'
+fi
+
+if [ -e $ngxaccesslog13 ] ; then
+   rm -r $ngxaccesslog13 2>/dev/null
+ else
+   echo '#The [access.log.12.gz] not exist'
+fi
+
+if [ -e $ngxaccesslog14 ] ; then
+   rm -r $ngxaccesslog14 2>/dev/null
+ else
+   echo '#The [access.log.13.gz] not exist'
+fi
+
+if [ -e $ngxaccesslog15 ] ; then
+   rm -r $ngxaccesslog15 2>/dev/null
+ else
+   echo '#The [access.log.14.gz] not exist'
+fi
+
+if [ -e $ngxaccesslog16 ] ; then
+   rm -r $ngxaccesslog16 2>/dev/null
+ else
+   echo '#The [access.log.15.gz] not exist'
+fi
+
+if [ -e $ngxaccesslog17 ] ; then
+   rm -r $ngxaccesslog17 2>/dev/null
+ else
+   echo '#The [access.log.16.gz] not exist'
+fi
+
+if [ -e $ngxaccesslog18 ] ; then
+   rm -r $ngxaccesslog18 2>/dev/null
+ else
+   echo '#The [access.log.17.gz] not exist'
+fi
+
+if [ -e $ngxaccesslog19 ] ; then
+   rm -r $ngxaccesslog19 2>/dev/null
+ else
+   echo '#The [access.log.18.gz] not exist'
+fi
+
+if [ -e $ngxaccesslog20 ] ; then
+   rm -r $ngxaccesslog20 2>/dev/null
+ else
+   echo '#The [access.log.19.gz] not exist'
+fi
+
+if [ -e $ngxaccesslog21 ] ; then
+   rm -r $ngxaccesslog21 2>/dev/null
+ else
+   echo '#The [access.log.20.gz] not exist'
+fi
+#--------------------------------------------#
+if [ -e $ngxerrorlog3 ] ; then
+   rm -r $ngxerrorlog3 2>/dev/null
+ else
+   echo '#The [error.log.2.gz] not exist'
+fi
+
+if [ -e $ngxerrorlog4 ] ; then
+   rm -r $ngxerrorlog4 2>/dev/null
+ else
+   echo '#The [error.log.3.gz] not exist'
+fi
+
+if [ -e $ngxerrorlog5 ] ; then
+   rm -r $ngxerrorlog5 2>/dev/null
+ else
+   echo '#The [error.log.4.gz] not exist'
+fi
+
+if [ -e $ngxerrorlog6 ] ; then
+   rm -r $ngxerrorlog6 2>/dev/null
+ else
+   echo '#The [error.log.5.gz] not exist'
+fi
+
+if [ -e $ngxerrorlog7 ] ; then
+   rm -r $ngxerrorlog7 2>/dev/null
+ else
+   echo '#The [error.log.6.gz] not exist'
+fi
+
+if [ -e $ngxerrorlog8 ] ; then
+   rm -r $ngxerrorlog8 2>/dev/null
+ else
+   echo '#The [error.log.7.gz] not exist'
+fi
+
+if [ -e $ngxerrorlog9 ] ; then
+   rm -r $ngxerrorlog9 2>/dev/null
+ else
+   echo '#The [error.log.8.gz] not exist'
+fi
+
+if [ -e $ngxerrorlog10 ] ; then
+   rm -r $ngxerrorlog10 2>/dev/null
+ else
+   echo '#The [error.log.9.gz] not exist'
+fi
+
+if [ -e $ngxerrorlog11 ] ; then
+   rm -r $ngxerrorlog11 2>/dev/null
+ else
+   echo '#The [error.log.10.gz] not exist'
+fi
+
+if [ -e $ngxerrorlog12 ] ; then
+   rm -r $ngxerrorlog12 2>/dev/null
+ else
+   echo '#The [error.log.11.gz] not exist'
+fi
+
+if [ -e $ngxerrorlog13 ] ; then
+   rm -r $ngxerrorlog13 2>/dev/null
+ else
+   echo '#The [error.log.12.gz] not exist'
+fi
+
+if [ -e $ngxerrorlog14 ] ; then
+   rm -r $ngxerrorlog14 2>/dev/null
+ else
+   echo '#The [error.log.13.gz] not exist'
+fi
+
+if [ -e $ngxerrorlog15 ] ; then
+   rm -r $ngxerrorlog15 2>/dev/null
+ else
+   echo '#The [error.log.14.gz] not exist'
+fi
+
+if [ -e $ngxerrorlog16 ] ; then
+   rm -r $ngxerrorlog16 2>/dev/null
+ else
+   echo '#The [error.log.15.gz] not exist'
+fi
+
+if [ -e $ngxerrorlog17 ] ; then
+   rm -r $ngxerrorlog17 2>/dev/null
+ else
+   echo '#The [error.log.16.gz] not exist'
+fi
+
+if [ -e $ngxerrorlog18 ] ; then
+   rm -r $ngxerrorlog18 2>/dev/null
+ else
+   echo '#The [error.log.17.gz] not exist'
+fi
+
+if [ -e $ngxerrorlog19 ] ; then
+   rm -r $ngxerrorlog19 2>/dev/null
+ else
+   echo '#The [error.log.18.gz] not exist'
+fi
+
+if [ -e $ngxerrorlog20 ] ; then
+   rm -r $ngxerrorlog20 2>/dev/null
+ else
+   echo '#The [error.log.19.gz] not exist'
+fi
+
+if [ -e $ngxerrorlog21 ] ; then
+   rm -r $ngxerrorlog21 2>/dev/null
+ else
+   echo '#The [error.log.20.gz] not exist'
+fi
+#--------------------------------------------#
+if [ -e $authlog3 ] ; then
+   rm -r $authlog3 2>/dev/null
+ else
+   echo '#The [auth.log.2.gz] not exist'
+fi
+
+if [ -e $authlog4 ] ; then
+   rm -r $authlog4 2>/dev/null
+ else
+   echo '#The [auth.log.3.gz] not exist'
+fi
+
+if [ -e $authlog5 ] ; then
+   rm -r $authlog5 2>/dev/null
+ else
+   echo '#The [auth.log.4.gz] not exist'
+fi
+
+if [ -e $authlog6 ] ; then
+   rm -r $authlog6 2>/dev/null
+ else
+   echo '#The [auth.log.5.gz] not exist'
+fi
+
+if [ -e $authlog7 ] ; then
+   rm -r $authlog7 2>/dev/null
+ else
+   echo '#The [auth.log.6.gz] not exist'
+fi
+#--------------------------------------------#
+if [ -e $daemonlog3 ] ; then
+   rm -r $daemonlog3 2>/dev/null
+ else
+   echo '#The [daemon.log.2.gz] not exist'
+fi
+
+if [ -e $daemonlog4 ] ; then
+   rm -r $daemonlog4 2>/dev/null
+ else
+   echo '#The [daemon.log.3.gz] not exist'
+fi
+
+if [ -e $daemonlog5 ] ; then
+   rm -r $daemonlog5 2>/dev/null
+ else
+   echo '#The [daemon.log.4.gz] not exist'
+fi
+
+if [ -e $daemonlog6 ] ; then
+   rm -r $daemonlog6 2>/dev/null
+ else
+   echo '#The [daemon.log.5.gz] not exist'
+fi
+
+if [ -e $daemonlog7 ] ; then
+   rm -r $daemonlog7 2>/dev/null
+ else
+   echo '#The [daemon.log.6.gz] not exist'
+fi
+#--------------------------------------------#
+if [ -e $debuglog3 ] ; then
+   rm -r $debuglog3 2>/dev/null
+ else
+   echo '#The [debug.2.gz] not exist'
+fi
+
+if [ -e $debuglog4 ] ; then
+   rm -r $debuglog4 2>/dev/null
+ else
+   echo '#The [debug.3.gz] not exist'
+fi
+
+if [ -e $debuglog5 ] ; then
+   rm -r $debuglog5 2>/dev/null
+ else
+   echo '#The [debug.4.gz] not exist'
+fi
+#--------------------------------------------#
+if [ -e $userlog3 ] ; then
+   rm -r $userlog3 2>/dev/null
+ else
+   echo '#The [user.log.2.gz] not exist'
+fi
+
+if [ -e $userlog4 ] ; then
+   rm -r $userlog4 2>/dev/null
+ else
+   echo '#The [user.log.3.gz] not exist'
+fi
+
+if [ -e $userlog5 ] ; then
+   rm -r $userlog5 2>/dev/null
+ else
+   echo '#The [user.log.4.gz] not exist'
+fi
+#--------------------------------------------#
+if [ -e $ufwlog3 ] ; then
+   rm -r $ufwlog3 2>/dev/null
+ else
+   echo '#The [ufw.log.2.gz] not exist'
+fi
+
+if [ -e $ufwlog4 ] ; then
+   rm -r $ufwlog4 2>/dev/null
+ else
+   echo '#The [ufw.log.3.gz] not exist'
+fi
+
+if [ -e $ufwlog5 ] ; then
+   rm -r $ufwlog5 2>/dev/null
+ else
+   echo '#The [ufw.log.4.gz] not exist'
+fi
+#--------------------------------------------#
+if [ -e $messageslog3 ] ; then
+   rm -r $messageslog3 2>/dev/null
+ else
+   echo '#The [messages.2.gz] not exist'
+fi
+
+if [ -e $messageslog4 ] ; then
+   rm -r $messageslog4 2>/dev/null
+ else
+   echo '#The [messages.3.gz] not exist'
+fi
+
+if [ -e $messageslog5 ] ; then
+   rm -r $messageslog5 2>/dev/null
+ else
+   echo '#The [messages.4.gz] not exist'
+fi
+#--------------------------------------------#
+if [ -e $kernlog3 ] ; then
+   rm -r $kernlog3 2>/dev/null
+ else
+   echo '#The [kern.log.2.gz] not exist'
+fi
+
+if [ -e $kernlog4 ] ; then
+   rm -r $kernlog4 2>/dev/null
+ else
+   echo '#The [kern.log.3.gz] not exist'
+fi
+
+if [ -e $kernlog5 ] ; then
+   rm -r $kernlog5 2>/dev/null
+ else
+   echo '#The [kern.log.4.gz] not exist'
+fi
+#--------------------------------------------#
+if [ -e $fail2banlog3 ] ; then
+   rm -r $fail2banlog3 2>/dev/null
+ else
+   echo '#The [fail2ban.log.2.gz] not exist'
+fi
+
+if [ -e $fail2banlog4 ] ; then
+   rm -r $fail2banlog4 2>/dev/null
+ else
+   echo '#The [fail2ban.log.3.gz] not exist'
+fi
+
+if [ -e $fail2banlog5 ] ; then
+   rm -r $fail2banlog5 2>/dev/null
+ else
+   echo '#The [fail2ban.log.4.gz] not exist'
+fi
+#--------------------------------------------#
+if [ -e $syslog3 ] ; then
+   rm -r $syslog3 2>/dev/null
+ else
+   echo '#The [syslog.2.gz] not exist'
+fi
+
+if [ -e $syslog4 ] ; then
+   rm -r $syslog4 2>/dev/null
+ else
+   echo '#The [syslog.3.gz] not exist'
+fi
+
+if [ -e $syslog5 ] ; then
+   rm -r $syslog5 2>/dev/null
+ else
+   echo '#The [syslog.4.gz] not exist'
+fi
+
+if [ -e $syslog6 ] ; then
+   rm -r $syslog6 2>/dev/null
+ else
+   echo '#The [syslog.5.gz] not exist'
+fi
+
+if [ -e $syslog7 ] ; then
+   rm -r $syslog7 2>/dev/null
+ else
+   echo '#The [syslog.6.gz] not exist'
+fi
+
+if [ -e $syslog8 ] ; then
+   rm -r $syslog8 2>/dev/null
+ else
+   echo '#The [syslog.7.gz] not exist'
+fi
+
+if [ -e $syslog9 ] ; then
+   rm -r $syslog9 2>/dev/null
+ else
+   echo '#The [syslog.8.gz] not exist'
+fi
+
+if [ -e $syslog10 ] ; then
+   rm -r $syslog10 2>/dev/null
+ else
+   echo '#The [syslog.9.gz] not exist'
+fi
+
+if [ -e $syslog11 ] ; then
+   rm -r $syslog11 2>/dev/null
+ else
+   echo '#The [syslog.10.gz] not exist'
+fi
+
+if [ -e $syslog12 ] ; then
+   rm -r $syslog12 2>/dev/null
+ else
+   echo '#The [syslog.11.gz] not exist'
+fi
 
 echo "--------------------------------------------"
 echo "Please wait for clear SHELL to complete ..."
