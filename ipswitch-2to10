@@ -1,0 +1,22 @@
+#!/bin/bash
+#by C4ry_Anonymous create
+#Support Debian/Centos/Archlinux
+#
+#
+echo "# # # # # # # # # # # # # # # #"
+echo "################################"
+echo "#                              #"
+echo "#       IPSwitch-2to10         #"
+echo "#       C4ry_Anonymous         #"
+echo "#                              #"
+echo "################################"
+echo "# # # # # # # # # # # # # # # #"
+echo "!Please enter binary IP address!"
+echo "!     separated by spaces      !"
+
+a=`echo "ibase=2; $1" | bc 2>/dev/null`
+b=`echo "ibase=2; $2" | bc 2>/dev/null`
+c=`echo "ibase=2; $3" | bc 2>/dev/null`
+d=`echo "ibase=2; $4" | bc 2>/dev/null`
+
+echo "Decimal conversion is: ${a}.${b}.${c}.${d}"
