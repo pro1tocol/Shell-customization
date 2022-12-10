@@ -1,7 +1,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 export EDITOR='vim'
 
-ZSH_THEME="passion"
+ZSH_THEME="shini"
 
 alias ls='ls --color=auto'
 alias la='ls --color=auto -laAF'
@@ -44,6 +44,6 @@ plugins=(
         
 source $ZSH/oh-my-zsh.sh
 
-alias exit='history -c && exit'
-alias poweroff='history -c && poweroff'
-alias reboot='history -c && reboot'
+alias exit='cat /dev/null > ~/.zsh_history && exit'
+alias poweroff='cat /dev/null > ~/.zsh_history && poweroff'
+alias reboot='cat /dev/null > ~/.zsh_history && reboot'
