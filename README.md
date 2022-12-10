@@ -51,7 +51,7 @@ plugins:
 
     cd ~/.oh-my-zsh/themes
     yay -S bc
-    https://github.com/dersam/staples/raw/master/staples.zsh-theme
+    wget https://github.com/dersam/staples/raw/master/staples.zsh-theme
     wget https://raw.githubusercontent.com/ChesterYue/ohmyzsh-theme-passion/master/passion.zsh-theme
     cd ~/.oh-my-zsh/plugins
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
