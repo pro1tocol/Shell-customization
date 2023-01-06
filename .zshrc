@@ -1,7 +1,12 @@
 export ZSH="$HOME/.oh-my-zsh"
 export EDITOR='vim'
 
+#export ZSH=/etc/oh-my-zsh
+#export ZSH_CACHE_DIR=~/.oh-my-zsh/cache
+
 ZSH_THEME="shini"
+
+zstyle ':omz:update' mode disabled
 
 alias ls='ls --color=auto'
 alias la='ls --color=auto -laAF'
