@@ -55,6 +55,7 @@ plugins:
     wget https://github.com/dersam/staples/raw/master/staples.zsh-theme
     wget https://raw.githubusercontent.com/ChesterYue/ohmyzsh-theme-passion/master/passion.zsh-theme
     cd ~/.oh-my-zsh/plugins
+    git clone git://github.com/zsh-users/zsh-completions.git
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
     git clone https://github.com/zsh-users/zsh-autosuggestions
 `step 3` deployment configuration
