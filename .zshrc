@@ -43,6 +43,7 @@ plugins=(
 	cp
 	nmap
 	zsh-interactive-cd
+	zsh-completions
 	zsh-syntax-highlighting
 	zsh-autosuggestions
         )
