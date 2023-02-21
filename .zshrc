@@ -8,7 +8,6 @@ ZSH_THEME="shini"
 
 zstyle ':omz:update' mode disabled
 
-alias ls='ls --color=auto'
 alias la='ls --color=auto -laAF'
 
 # enable color support of ls, less and man, and also add handy aliases
