@@ -1,5 +1,10 @@
 # ~/.zshrc file for zsh interactive shells.
 # see /usr/share/doc/zsh/examples/zshrc for examples(KALI)
+export ZSH="$HOME/.oh-my-zsh"
+export EDITOR='vim'
+
+#export ZSH=/etc/oh-my-zsh
+#export ZSH_CACHE_DIR=~/.oh-my-zsh/cache
 
 setopt autocd              # change directory just by typing its name
 #setopt correct            # auto correct mistakes
