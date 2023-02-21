@@ -102,8 +102,6 @@ if [ "$color_prompt" = yes ]; then
     # override default virtualenv indicator in prompt
     VIRTUAL_ENV_DISABLE_PROMPT=1
 
-    configure_prompt
-
     # enable syntax-highlighting
     if [ -f /root/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
         . /root/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
