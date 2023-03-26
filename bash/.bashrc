@@ -14,24 +14,20 @@ HISTCONTROL=ignoredups:ignorespace
 shopt -s autocd                # change directory just by typing its name
 # shopt -s autocorrect         # auto correct mistakes (commented out)
 shopt -s interactive_comments # allow comments in interactive mode
-shopt -s histverify           # enable history expansion with !!:<number> syntax
 shopt -s globstar             # enable ** recursive file searching
 shopt -s checkwinsize         # update window size after every command
 shopt -s extglob              # enable extended pattern matching
 shopt -s nullglob             # allow empty matches for globs instead of a literal string
+shopt -s histappend     # append new history entries to the end of the history list
 
 WORDCHARS=${WORDCHARS//\/} # Don't consider certain characters part of the word
 
 PROMPT_EOL_MARK=""
 
 # History configurations
-HISTFILE=~/.bash_history
+PROMPT_COMMAND="history -a;history -n"
 HISTSIZE=500
 SAVEHIST=1000
-shopt -s histappend     # append new history entries to the end of the history list
-PROMPT_COMMAND="history -a;history -n"
-
-alias history="history 0"
 
 TIMEFMT=$'\nreal\t%E\nuser\t%U\nsys\t%S\ncpu\t%P'
 
